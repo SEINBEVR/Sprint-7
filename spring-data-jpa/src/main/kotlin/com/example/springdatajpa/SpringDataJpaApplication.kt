@@ -37,10 +37,15 @@ class SpringDataJpaApplication(
 
         println("Список всех сотрудников: $emps")
         println("Список сотрудников из отдела IT: $empsFromIT")
+
         emp3.department = null
         employeeRepository.delete(emp3)
         emps = employeeRepository.findAll()
         println("Cписок сотрудников после увольнения Анны: $emps")
+
+        emp2.salary = 120000
+        employeeRepository.save(emp2)
+        println("Данные по Пётру после повышения зарплаты: ${employeeRepository.findById(emp2.id)}")
     }
 }
 
