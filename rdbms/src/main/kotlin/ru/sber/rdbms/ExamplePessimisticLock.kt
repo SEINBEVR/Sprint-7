@@ -12,9 +12,9 @@ amount int
  */
 fun main() {
     val connection = DriverManager.getConnection(
-        "jdbc:postgresql://localhost:5432/db",
+        "jdbc:postgresql://localhost:5433/db",
         "postgres",
-        "postgres"
+        "admin"
     )
     connection.use { conn ->
         val autoCommit = conn.autoCommit
